@@ -8,6 +8,7 @@ public class BGScaler : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
+		// set height of backgroundTexture to screenResolution
 		float height = Camera.main.orthographicSize * 2f;
 		float width = height * Screen.width / Screen.height;
 

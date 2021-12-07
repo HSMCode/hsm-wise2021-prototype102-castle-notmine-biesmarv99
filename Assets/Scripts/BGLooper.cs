@@ -12,6 +12,7 @@ public class BGLooper : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
+		// initialise material and backgroundTexture offset
 		mat = GetComponent<Renderer>().material;
 		offset = mat.GetTextureOffset("_MainTex");
 	}
@@ -19,6 +20,7 @@ public class BGLooper : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+		// offset backgroundTexture along x-axis by set time factor
 		offset.x += speed * Time.deltaTime;
 		mat.SetTextureOffset("_MainTex", offset);
 
