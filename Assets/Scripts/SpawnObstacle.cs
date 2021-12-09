@@ -42,7 +42,7 @@ public class SpawnObstacle : MonoBehaviour
         GameObject chosenObstacle = possibleObstacles[chooseObstacle];
 
         // x-coordinate: inherited from PlatformSpawn, add half the size to change spawn-pivot
-        Bounds bounds = chosenObstacle.GetComponent<Renderer>().bounds;
+        Bounds bounds = chosenObstacle.GetComponentInChildren<Renderer>().bounds;
         float xPos = transform.position.x + bounds.extents.x;
         // y-coordinate: randomly within -3.5 and 2, make sure that obstacles can be reached by max +-1.5f
         randomFactor = Random.Range(-1f, 1f);
@@ -65,7 +65,7 @@ public class SpawnObstacle : MonoBehaviour
 
     IEnumerator waitForObstacle() {
         // check if right side of obstacle is past spawn zone
-        float xPos = lastPlatform.GetComponent<Renderer>().bounds.max.x;
+        float xPos = lastPlatform.GetComponentInChildren<Renderer>().bounds.max.x;
         if (xPos < transform.position.x - spawnGap) {
             canSpawnPlatform = true;
         }

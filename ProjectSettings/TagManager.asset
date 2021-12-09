@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Crate
   - platform
+  - First
+  - Coin
   layers:
   - Default
   - TransparentFX
