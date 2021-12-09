@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnObstacle : MonoBehaviour
+public class SpawnObstacle_2 : MonoBehaviour
 {
     public GameObject[] possibleObstacles;
     public float spawnGap = 3f;
     private int numberOfObstacles;
     // set first platform to spawn around -2.5f on y-axis
-    public float randomYPosition = -2.5f;
+    private float randomYPosition = -2.5f;
     private float randomFactor;
     // variables to check if there is space for next obstacle
     private GameObject lastPlatform;
@@ -48,7 +48,8 @@ public class SpawnObstacle : MonoBehaviour
         randomFactor = Random.Range(-1f, 1f);
         randomYPosition += randomFactor;
         if (randomYPosition < -3.5 || randomYPosition > 2) {
-            randomYPosition -= randomFactor * 2;
+            randomYPosition -= randomFactor * 2 ;
+            randomYPosition = randomYPosition + 12;
         }
         float yPos = randomYPosition;
         // z-coordinate: in front of background
