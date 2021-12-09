@@ -5,13 +5,16 @@ using UnityEngine;
 public class Obstacle : MonoBehaviour
 {
 
-	public float speed = 3f;
+	public float speed = 3f; //set public variable for platform movement-speed
 	// Rigidbody2D myBody;
+	public GameObject background;
+	BGLooper backgroundScript;
 
 	// Use this for initialization
 	void Start()
 	{
-		// myBody = GetComponent<Rigidbody2D>();
+		background = GameObject.Find("Background");
+		backgroundScript = background.GetComponent<BGLooper>();
 	}
 
 	// Update is called once per frame
@@ -22,9 +25,11 @@ public class Obstacle : MonoBehaviour
 
 		// destroy when out of vision
 		// use x-scale of platform object to get actual size
-        if (transform.position.x + (transform.localScale.x * 2) < GameObject.Find("PlatformDestroy").transform.position.x) {
-            gameObject.SetActive(false);
-            Destroy(gameObject, 0.3f);
+        //if (transform.position.x + (transform.localScale.x * 2) < GameObject.Find("PlatformDestroy").transform.position.x) {
+			if ((transform.position.x + transform.localScale.x) < (background.transform.position.x - backgroundScript.width)) {
+            //gameObject.SetActive(false);
+           Destroy(gameObject);
+			
         }
 	}
 }

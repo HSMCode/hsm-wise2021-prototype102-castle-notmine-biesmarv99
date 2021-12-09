@@ -8,6 +8,7 @@ public class BGLooper : MonoBehaviour
 	public float speed = 0.1f;
 	private Vector2 offset = Vector2.zero;
 	private Material mat;
+	public float width;
 
 	// Use this for initialization
 	void Start()
@@ -18,7 +19,7 @@ public class BGLooper : MonoBehaviour
 
 				// set height of backgroundTexture to screenResolution
 		float height = Camera.main.orthographicSize * 2f;
-		float width = height * Screen.width / Screen.height;
+		width = height * Screen.width / Screen.height;
 
 		if (gameObject.name == "Background")
 		{
