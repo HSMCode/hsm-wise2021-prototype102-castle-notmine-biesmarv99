@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,12 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
-    void OnTriggerEnter2D(Collider2D other)
+
+    public GameObject _gameOverScreen;
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Collector")
+        if (other.tag == "Player")
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            _gameOverScreen.SetActive(true);
+            Time.timeScale = 0;
         }
     }
-
 }

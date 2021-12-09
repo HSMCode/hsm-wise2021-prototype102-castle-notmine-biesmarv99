@@ -16,6 +16,7 @@ public class ReloadScene : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R)) {
             Debug.Log("Reloaded Scene!");
             SceneManager.LoadScene("SaveTheCastle");
+            Time.timeScale = 1;
         }
     }
 }
