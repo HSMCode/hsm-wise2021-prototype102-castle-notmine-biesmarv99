@@ -29,6 +29,8 @@ Run Unity and press play!
 - Game concept: Merve
 - First iteration: Marvin
 - Second iteration: Carola
+- Third iteration: Maik
+- Fourth iteration: Willi
 
 ## Versioning
 
