@@ -15,6 +15,19 @@ public class BGLooper : MonoBehaviour
 		// initialise material and backgroundTexture offset
 		mat = GetComponent<Renderer>().material;
 		offset = mat.GetTextureOffset("_MainTex");
+
+				// set height of backgroundTexture to screenResolution
+		float height = Camera.main.orthographicSize * 2f;
+		float width = height * Screen.width / Screen.height;
+
+		if (gameObject.name == "Background")
+		{
+			transform.localScale = new Vector3(width, height, 0);
+		}
+		else
+		{
+			transform.localScale = new Vector3(width + 3f, 2, 0);
+		}
 	}
 
 	// Update is called once per frame
