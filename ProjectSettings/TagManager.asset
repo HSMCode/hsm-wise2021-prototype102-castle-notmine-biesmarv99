@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Crate
+  - platform
+  - First
+  - Coin
   layers:
   - Default
   - TransparentFX

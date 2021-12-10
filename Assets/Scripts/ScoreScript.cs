@@ -17,12 +17,12 @@ public class ScoreScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.tag != "Crate")
+        if(col.tag != "platform")
         {
             scoreNum += 1;
-            Destroy(col.gameObject);
             myScoreText.text = ("Score: " + scoreNum);
             }
             
+
     }
 }
