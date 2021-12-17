@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
 
 	Rigidbody2D myBody;
 	bool canJump;
+	bool canDoubleJump;
 	private float xPosition;
 
 	public int coinScore;
@@ -40,27 +41,36 @@ public class PlayerMovement : MonoBehaviour
 	void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.Space)) {
-			Jump();
+			
+			if (canJump)
+			{
+				Jump();
+				canDoubleJump = true;
+			}
+			else if (canDoubleJump)
+			{
+				Jump();
+				canDoubleJump = false;
+			}
 			
 		}
+		
 	}
 
 	public void Jump()
 	{
-		// make sure player can only jump when touching ground
+		// make sure player can only doublejump again when touching ground
 		// if player is behind x-axis starting point, let them catch up
-		if (canJump)
-		{	
 			PlayOneShot(jumpSound);		//if jump is done, call jumpsoundeffect to be played
 			canJump = false;
-			if (transform.position.x <= xPosition) {
+			if (transform.position.x <= xPosition) 
+			{
 				myBody.velocity = new Vector2(forwardForce, jumpForce);
-			} else {
+			} 
+			else
+			{
 				myBody.velocity = new Vector2(0, jumpForce);
 			}
-			
-			
-		}
 	}
 
 	void OnCollisionEnter2D(Collision2D other)
