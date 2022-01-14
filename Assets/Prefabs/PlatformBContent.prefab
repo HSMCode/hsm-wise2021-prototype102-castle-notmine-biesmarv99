@@ -15,6 +15,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlatformBContent
       objectReference: {fileID: 0}
+    - target: {fileID: 3654360758416418928, guid: 750b000e2f964bf489d5230f5e641405, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.03
+      objectReference: {fileID: 0}
     - target: {fileID: 3879224667540978434, guid: 750b000e2f964bf489d5230f5e641405, type: 3}
       propertyPath: m_RootOrder
       value: 0
