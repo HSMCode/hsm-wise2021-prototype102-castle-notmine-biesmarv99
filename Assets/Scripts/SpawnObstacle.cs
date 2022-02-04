@@ -48,7 +48,7 @@ public class SpawnObstacle : MonoBehaviour
         // y-coordinate: randomly within -3.5 and 2, make sure that obstacles can be reached by max +-1.5f
         randomFactor = Random.Range(-1f, 1f);
         randomYPosition += randomFactor;
-        if (randomYPosition < -3.5 || randomYPosition > 2) {
+        if (randomYPosition < -4 || randomYPosition > 1.5) {
             randomYPosition -= randomFactor * 2;
         }
 
